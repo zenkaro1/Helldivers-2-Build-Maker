@@ -1,0 +1,20 @@
+# IDE
+.vscode/
+*.code-workspace
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Backups and temporary files
+bak/
+*.bak
+*.tmp

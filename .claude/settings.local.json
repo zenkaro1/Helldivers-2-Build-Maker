@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"z:\\\\max\\\\versions\\\\hd2 build maker 3\\\\Hd2 Build Maker\\\\\" | grep -E \"^\\\\.\" 2>/dev/null)",
+      "Read(//z/max/versions/hd2 build maker 3/Hd2 Build Maker\" | grep -E ^. 2>/dev/**)",
+      "WebSearch",
+      "WebFetch(domain:www.onlinewebfonts.com)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "PowerShell(\"Done\")"
+    ]
+  }
+}

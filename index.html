@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helldivers 2 Build Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hd2-bg"></div>
+    <main class="container">
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+        <h1>Helldivers 2 Build Maker</h1>
+            <section class="build-section glass">
+                <table class="build-table">
+    <tr>
+        <th>Primary</th>
+        <th>Secondary</th>
+        <th>Throwable</th>
+        <th>Armor Passive</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="primary-input" list="primary-list" placeholder="Search primary...">
+            <datalist id="primary-list">
+                <option value="Accelerator Rifle"></option>
+                <option value="Adjudicator"></option>
+                <option value="Amendment"></option>
+                <option value="Blitzer"></option>
+                <option value="Breaker"></option>
+                <option value="Breaker Incendiary"></option>
+                <option value="Breaker Spray & Pray"></option>
+                <option value="Censor"></option>
+                <option value="Constitution"></option>
+                <option value="Cookout"></option>
+                <option value="Coyote"></option>
+                <option value="Double Freedom"></option>
+                <option value="Deadeye"></option>
+                <option value="Defender"></option>
+                <option value="Diligence"></option>
+                <option value="Diligence Counter Sniper"></option>
+                <option value="Dominator"></option>
+                <option value="Double-Edge Sickle"></option>
+                <option value="Eruptor"></option>
+                <option value="Exploding Crossbow"></option>
+                <option value="Gallant"></option>
+                <option value="Halt"></option>
+                <option value="Knight"></option>
+                <option value="Liberator"></option>
+                <option value="Liberator Carbine"></option>
+                <option value="Liberator Concussive"></option>
+                <option value="Liberator Penetrator"></option>
+                <option value="M7S SMG"></option>
+                <option value="M90A Shotgun"></option>
+                <option value="MA5C Assault Rifle"></option>
+                <option value="One-Two"></option>
+                <option value="Pacifier"></option>
+                <option value="Pummeler"></option>
+                <option value="Punisher"></option>
+                <option value="Punisher Plasma"></option>
+                <option value="Purifier"></option>
+                <option value="Reprimand"></option>
+                <option value="Scorcher"></option>
+                <option value="Scythe"></option>
+                <option value="SG-97 Shotgun"></option>
+                <option value="Sickle"></option>
+                <option value="Slugger"></option>
+                <option value="STA-11 SMG"></option>
+                <option value="STA-52 Assault Rifle"></option>
+                <option value="Stoker"></option>
+                <option value="Suppressor"></option>
+                <option value="Tenderizer"></option>
+                <option value="Torcher"></option>
+                <option value="Trident"></option>
+                <option value="Variable"></option>
+            </datalist>
+        </td>
+        <td>
+            <input type="text" id="secondary-input" list="secondary-list" placeholder="Search secondary...">
+            <datalist id="secondary-list">
+                <option value="Bushwhacker"></option>
+                <option value="Combat Hatchet"></option>
+                <option value="Crisper"></option>
+                <option value="Dagger"></option>
+                <option value="Entrenchment Tool"></option>
+                <option value="Grenade Pistol"></option>
+                <option value="Loyalist"></option>
+                <option value="Machete"></option>
+                <option value="Missile Pistol"></option>
+                <option value="Peacemaker"></option>
+                <option value="Pistol"></option>
+                <option value="Redeemer"></option>
+                <option value="Re-Educator"></option>
+                <option value="Saber"></option>
+                <option value="Senator"></option>
+                <option value="Stim Pistol"></option>
+                <option value="Stun Baton"></option>
+                <option value="Stun Lance"></option>
+                <option value="Talon"></option>
+                <option value="Ultimatum"></option>
+                <option value="Verdict"></option>
+                <option value="Veto"></option>
+                <option value="Warrant"></option>
+            </datalist>
+        </td>
+        <td>
+            <input type="text" id="throwable-input" list="throwable-list" placeholder="Search throwable...">
+            <datalist id="throwable-list">
+                <option value="Arc"></option>
+                <option value="Dynamite"></option>
+                <option value="Frag"></option>
+                <option value="Gas"></option>
+                <option value="Giga Grenade"></option>
+                <option value="High Explosive"></option>
+                <option value="Impact"></option>
+                <option value="Incendiary"></option>
+                <option value="Incendiary Impact"></option>
+                <option value="Lure Mine"></option>
+                <option value="Pineapple"></option>
+                <option value="Pyrotech"></option>
+                <option value="Seeker"></option>
+                <option value="Shield"></option>
+                <option value="Smoke"></option>
+                <option value="Smokescreen"></option>
+                <option value="Stun"></option>
+                <option value="Thermite"></option>
+                <option value="Throwing Knife"></option>
+                <option value="Urchin"></option>
+            </datalist>
+        </td>
+        <td>
+            <input type="text" id="armor-input" list="armor-list" placeholder="Search armor...">
+            <datalist id="armor-list">
+                <option value="Acclimated"></option>
+                <option value="Adreno Defibrillator"></option>
+                <option value="Advanced Filtration"></option>
+                <option value="Ballistic Padding"></option>
+                <option value="Concussive Padding"></option>
+                <option value="Democracy Protects"></option>
+                <option value="Desert Stromer"></option>
+                <option value="Electrical Conduit"></option>
+                <option value="Engineering Kit"></option>
+                <option value="Extra Padding"></option>
+                <option value="Feet First"></option>
+                <option value="Fortified"></option>
+                <option value="Gunslinger"></option>
+                <option value="Inflammable"></option>
+                <option value="Med Kit"></option>
+                <option value="Peak Physique"></option>
+                <option value="Reduced Signature"></option>
+                <option value="Reinforced Epaulettes"></option>
+                <option value="Rock Solid"></option>
+                <option value="Scout"></option>
+                 <option value="Servo Assisted"></option>
+                <option value="Siege Ready"></option>
+                <option value="Supplementary Adrenaline"></option>
+                <option value="Unflinching"></option>
+            </datalist>
+        </td>
+    </tr>
+    <tr>
+        <th>Stratagem 1</th>
+        <th>Stratagem 2</th>
+        <th>Stratagem 3</th>
+        <th>Stratagem 4</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="strat1-input" list="strat-list" placeholder="Stratagem 1...">
+        </td>
+        <td>
+            <input type="text" id="strat2-input" list="strat-list" placeholder="Stratagem 2...">
+        </td>
+        <td>
+            <input type="text" id="strat3-input" list="strat-list" placeholder="Stratagem 3...">
+        </td>
+        <td>
+            <input type="text" id="strat4-input" list="strat-list" placeholder="Stratagem 4...">
+        </td>
+    </tr>
+</table>
+
+<!-- One shared list for all 4 stratagem inputs -->
+<datalist id="strat-list">
+    <option value="500kg Bomb"></option>
+    <option value="Airburst Rocket Launcher"></option>
+    <option value="Anti-Material Rifle"></option>
+    <option value="Anti-Personal Minefield"></option>
+    <option value="Anti-Tank Emplacement"></option>
+    <option value="Anti-Tank Mines"></option>
+    <option value="Arc Thrower"></option>
+    <option value="Autocannon"></option>
+    <option value="Autocannon Sentry"></option>
+    <option value="Ballistic Shield"></option>
+    <option value="Bastion"></option>
+    <option value="Belt-Fed Grenade Launcher"></option>
+    <option value="Breaching Hammer"></option>
+    <option value="Breakthrough Exosuit"></option>
+    <option value="Bulletstorm"></option>
+    <option value="C4 Pack"></option>
+    <option value="Commando"></option>
+    <option value="Cremator"></option>
+    <option value="De-Escalator"></option>
+    <option value="Defoliation Tool"></option>
+    <option value="Directional Shield"></option>
+    <option value="Dog Breath"></option>
+    <option value="Emancipator Exosuit"></option>
+    <option value="EMS Mortar Sentry"></option>
+    <option value="Epoch"></option>
+    <option value="Expendable Anti-Tank"></option>
+    <option value="Expendable Napalm"></option>
+    <option value="Fast Recon Vehicle"></option>
+    <option value="Flame Sentry"></option>
+    <option value="Flamethrower"></option>
+    <option value="Gas Mines"></option>
+    <option value="Gas Mortar Sentry"></option>
+    <option value="Gatling Sentry"></option>
+    <option value="Grenade Launcher"></option>
+    <option value="Grenadier Battlement"></option>
+    <option value="Guard Dog"></option>
+    <option value="Heavy Machine Gun"></option>
+    <option value="HMG Emplacement"></option>
+    <option value="Hot Dog"></option>
+    <option value="Hover Pack"></option>
+    <option value="Incendiary Mines"></option>
+    <option value="Jump Pack"></option>
+    <option value="K-9"></option>
+    <option value="Laser Cannon"></option>
+    <option value="Laser Sentry"></option>
+    <option value="Leveler"></option>
+    <option value="Lumberer Exosuit"></option>
+    <option value="Machine Gun"></option>
+    <option value="Machine Gun Sentry"></option>
+    <option value="Maxigun"></option>
+    <option value="Mortar Sentry"></option>
+    <option value="One True Flag"></option>
+    <option value="Orbital 120mm HE Barrage"></option>
+    <option value="Orbital 380mm HE Barrage"></option>
+    <option value="Orbital Airburst Strike"></option>
+    <option value="Orbital Gas Strike"></option>
+    <option value="Orbital Gatling Barrage"></option>
+    <option value="Orbital Laser"></option>
+    <option value="Orbital Napalm Barrage"></option>
+    <option value="Orbital Railcannon Strike"></option>
+    <option value="Orbital Walking Barrage"></option>
+    <option value="Patriot Exosuit"></option>
+    <option value="Portable Hellbomb"></option>
+    <option value="Quasar Cannon"></option>
+    <option value="Railgun"></option>
+    <option value="Recoilless Rifle"></option>
+    <option value="Rocket Sentry"></option>
+    <option value="Rover"></option>
+    <option value="Shield Generator Pack"></option>
+    <option value="Shield Generator Relay"></option>
+    <option value="Solo Silo"></option>
+    <option value="Spear"></option>
+    <option value="Speargun"></option>
+    <option value="Stalwart"></option>
+    <option value="Sterilizer"></option>
+    <option value="Eagle Strafing Run"></option>
+    <option value="Supply Pack"></option>
+    <option value="Tesla Tower"></option>
+    <option value="Warp Pack"></option>
+    <option value="WASP Launcher"></option>
+</datalist>
+            <div id="screenshot-area">
+                <h2 class="loadout-title">HELLDIVER MISSION LOADOUT</h2>
+                <table class="build-img-table">
+                    <tr>
+                        <td><img id="primary-img" src="assets/templates/weapon-templatebg.png" alt="Primary" class="slot-img"></td>
+                        <td><img id="secondary-img" src="assets/templates/weapon-templatebg.png" alt="Secondary" class="slot-img"></td>
+                        <td><img id="throwable-img" src="assets/templates/weapon-templatebg.png" alt="Throwable" class="slot-img"></td>
+                        <td><img id="armor-img" src="assets/templates/weapon-templatebg.png" alt="Armor Passive" class="slot-img"></td>
+                    </tr>
+                    <tr>
+                        <td><img id="strat1-img" src="assets/templates/weapon-templatebg.png" alt="Stratagem 1" class="slot-img"></td>
+                        <td><img id="strat2-img" src="assets/templates/weapon-templatebg.png" alt="Stratagem 2" class="slot-img"></td>
+                        <td><img id="strat3-img" src="assets/templates/weapon-templatebg.png" alt="Stratagem 3" class="slot-img"></td>
+                        <td><img id="strat4-img" src="assets/templates/weapon-templatebg.png" alt="Stratagem 4" class="slot-img"></td>
+                    </tr>
+                </table>
+
+                <div class="guide-container">
+                    <h3>Build Guide & Strategy</h3>
+                    <textarea id="guide-input" placeholder="Describe how to best play this loadout..."></textarea>
+            </div>
+            </section>
+            <div class="footer-actions">
+                <button id="screenshot-btn" class="hd2-btn">
+                    <span>💾</span> PNG Download
+                </button>
+                <button id="copy-btn" class="hd2-btn">
+                    <span>📋</span> Copy to Clipboard
+                </button>
+                <button id="share-btn" class="hd2-btn">
+                    <span>🔗</span> Copy Link
+                </button>
+            </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

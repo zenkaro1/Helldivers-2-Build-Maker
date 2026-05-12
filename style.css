@@ -1,0 +1,487 @@
+@font-face {
+  font-family: 'FS Sinclair';
+  src: url('assets/fonts/FSSinclair-Regular.otf') format('opentype'),
+       url('assets/fonts/FSSinclair-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'FS Sinclair', 'Segoe UI', Arial, sans-serif;
+  background: #181a20;
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.hd2-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('assets/background/mainbg169.png') center/cover no-repeat;
+  z-index: 0;
+  filter: blur(6px) brightness(0.5);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+h1 {
+  margin-top: 40px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #ffe066;
+  text-shadow: 0 2px 16px #000a;
+}
+
+.build-section {
+  margin-top: 32px;
+  padding: 32px 24px;
+  border-radius: 24px;
+  background: rgba(30, 32, 40, 0.7);
+  box-shadow: 0 8px 32px #000a;
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 224, 102, 0.15);
+}
+
+.build-table, .build-img-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0 18px;
+  margin-bottom: 32px;
+  background: none;
+}
+
+.build-table {
+  border-spacing: 0 3px;
+}
+
+.build-table th {
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+
+.build-table td {
+  padding-top: 6px;
+}
+
+.build-table tr:nth-child(3) th {
+  padding-top: 22px;
+}
+
+th {
+  color: #ffe066;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding-bottom: 12px;
+  background: none;
+}
+
+td {
+  text-align: center;
+  padding: 18px 8px 10px 8px;
+  background: rgba(24, 26, 32, 0.55);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0003;
+}
+
+input[type="text"] {
+  width: 95%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ffe06644;
+  background: rgba(24, 26, 32, 0.92);
+  color: #ffe066;
+  font-size: 1.08rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  margin-bottom: 2px;
+  text-align: center;
+  box-shadow: 0 1px 4px #0002;
+}
+input[type="text"]:focus {
+  border: 1.5px solid #ffe066;
+  box-shadow: 0 0 12px #ffe06655;
+}
+
+th {
+  color: #ffe066;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-bottom: 6px;
+}
+
+td {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #ffe06644;
+  background: rgba(24, 26, 32, 0.8);
+  color: #ffe066;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  margin-bottom: 4px;
+}
+input[type="text"]:focus {
+  border: 1.5px solid #ffe066;
+  box-shadow: 0 0 8px #ffe06655;
+}
+
+.build-img-table {
+  margin: 24px auto 0 auto;
+  border-collapse: separate;
+  border-spacing: 12px 10px;
+}
+
+.build-img-table td {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  position: relative;
+}
+
+.build-img-table td[data-tooltip]:not([data-tooltip=""]):hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 12, 16, 0.97);
+  color: #ffe066;
+  border: 1px solid rgba(255, 224, 102, 0.5);
+  padding: 5px 12px;
+  font-family: 'FS Sinclair', 'Segoe UI', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.slot-img {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.slot-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 24px #ffe06655;
+}
+
+@media (max-width: 900px) {
+  .slot-img {
+    width: 120px;
+    height: 72px;
+  }
+  .build-img-table {
+    border-spacing: 6px 6px;
+  }
+}
+
+#screenshot-area {
+    width: 1200px;
+    padding: 20px;
+    background: #111;
+}
+
+.guide-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-container h3 {
+    color: #ffe066;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#guide-input {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1.5px solid #ffe06644;
+    background: rgba(24, 26, 32, 0.92);
+    color: #f5f5f5;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'FS Sinclair', 'Segoe UI', Arial, sans-serif;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#guide-input:focus {
+    border: 1.5px solid #ffe066;
+    box-shadow: 0 0 12px #ffe06655;
+}
+
+/* Placeholder text color */
+#guide-input::placeholder {
+    color: rgba(255, 224, 102, 0.4);
+}
+
+#screenshot-area {
+    width: 100%;           /* Nutzt die volle Breite des Containers */
+    max-width: 800px;      /* Prevents it from getting too wide */
+    margin: 0 auto;        /* Zentriert den Bereich */
+    padding: 20px;
+    background: #181a20;   /* Gleicher Hintergrund wie der Rest */
+    border-radius: 15px;
+    box-sizing: border-box; /* WICHTIG: Padding wird in die Breite eingerechnet */
+    overflow: hidden;      /* Prevents images from sticking out */
+}
+
+/* Allows the image table to be responsive */
+.build-img-table {
+    width: 100%;
+    table-layout: fixed; /* Zwingt die Spalten, gleich groß zu sein */
+}
+
+.slot-img {
+    max-width: 100%;     /* Bild passt sich der Zelle an */
+    height: auto;        /* Proportional skalieren */
+    display: block;
+    margin: 0 auto;
+}
+
+.loadout-title {
+    color: #ffe066;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffe066;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 224, 102, 0.5);
+}
+
+/* Container muss relative sein, damit der Button sich daran ausrichtet */
+.container {
+    position: relative; 
+    padding-top: 60px; /* Platz schaffen für den Button oben */
+}
+
+.action-btn-top {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: rgba(255, 224, 102, 0.1);
+    color: #ffe066;
+    border: 2px solid #ffe066;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-family: inherit;
+}
+
+.action-btn-top:hover {
+    background: #ffe066;
+    color: #181a20;
+    box-shadow: 0 0 15px rgba(255, 224, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+.action-btn-top:active {
+    transform: translateY(0);
+}
+
+/* Fix für mobile Geräte: Button mittig oben, wenn das Display schmal ist */
+@media (max-width: 600px) {
+    .action-btn-top {
+        position: static;
+        margin: 20px auto;
+        display: block;
+        width: fit-content;
+    }
+    .container {
+        padding-top: 20px;
+    }
+}
+
+/* Der Anker für den Button */
+.build-section {
+    position: relative; 
+    margin-top: 32px;
+    padding: 60px 24px 32px 24px; /* Oben mehr Padding (60px), damit der Button Platz hat */
+    border-radius: 24px;
+    background: rgba(30, 32, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 224, 102, 0.15);
+}
+
+/* Der Button in der Ecke */
+.inner-box-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: rgba(255, 224, 102, 0.1);
+    color: #ffe066;
+    border: 1px solid rgba(255, 224, 102, 0.4);
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.inner-box-btn:hover {
+    background: rgba(255, 224, 102, 0.2);
+    border-color: #ffe066;
+    box-shadow: 0 0 10px rgba(255, 224, 102, 0.2);
+    transform: scale(1.05);
+}
+
+/* Fix für schmale Bildschirme */
+@media (max-width: 600px) {
+    .inner-box-btn {
+        position: static; /* Button fließt wieder normal im Textfluss */
+        margin: 0 auto 20px auto;
+        display: block;
+        width: 100%;
+    }
+    .build-section {
+        padding-top: 32px;
+    }
+}
+
+select {
+  width: 95%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ffe06644;
+  background: rgba(24, 26, 32, 0.92);
+  color: #ffe066;
+  font-size: 1.08rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  margin-bottom: 2px;
+  text-align: center;
+  box-shadow: 0 1px 4px #0002;
+}
+select:focus {
+  border: 1.5px solid #ffe066;
+  box-shadow: 0 0 12px #ffe06655;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    padding: 30px 0 60px 0;
+    flex-wrap: wrap;
+}
+
+.hd2-btn {
+    position: relative;
+    background: rgba(12, 14, 18, 0.92);
+    color: #ffe066;
+    border: 1.5px solid rgba(255, 224, 102, 0.45);
+    border-radius: 2px;
+    padding: 13px 28px;
+    font-family: 'FS Sinclair', 'Segoe UI', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s, box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 224, 102, 0.05);
+}
+
+.hd2-btn::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-top: 1.5px solid #ffe066;
+    border-left: 1.5px solid #ffe066;
+    pointer-events: none;
+}
+
+.hd2-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 1.5px solid #ffe066;
+    border-right: 1.5px solid #ffe066;
+    pointer-events: none;
+}
+
+.hd2-btn:hover {
+    background: rgba(255, 224, 102, 0.07);
+    border-color: #ffe066;
+    box-shadow: 0 0 22px rgba(255, 224, 102, 0.2), 0 4px 18px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.hd2-btn:active {
+    transform: translateY(0);
+    background: rgba(255, 224, 102, 0.13);
+    box-shadow: 0 0 10px rgba(255, 224, 102, 0.15);
+}
+
+.hd2-btn span {
+    font-size: 1.05rem;
+}
+
+@media (max-width: 650px) {
+    .footer-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hd2-btn {
+        width: 230px;
+        justify-content: center;
+    }
+}
