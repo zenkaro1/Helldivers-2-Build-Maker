@@ -252,6 +252,40 @@ function updateGuideEntry(oldName, newName) {
 }
 
 // --- INPUT HANDLERS ---
+// Enter wählt die oberste passende Datalist-Option (exakt > prefix > substring)
+function selectFirstDatalistMatch(inputEl) {
+    const dl = document.getElementById(inputEl.getAttribute('list'));
+    if (!dl) return;
+    const q = inputEl.value.trim().toLowerCase();
+    if (!q) return;
+    const opts = [...dl.options];
+    const match = opts.find(o => o.value.toLowerCase() === q)
+        || opts.find(o => o.value.toLowerCase().startsWith(q))
+        || opts.find(o => o.value.toLowerCase().includes(q));
+    if (!match) return;
+    inputEl.value = match.value;
+    inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+const FOCUS_ORDER = ['primary-input', 'secondary-input', 'throwable-input', 'armor-input', 'strat1-input', 'strat2-input', 'strat3-input', 'strat4-input'];
+
+function focusNextInput(inputEl) {
+    const idx = FOCUS_ORDER.indexOf(inputEl.id);
+    if (idx === -1 || idx === FOCUS_ORDER.length - 1) { inputEl.blur(); return; }
+    const next = document.getElementById(FOCUS_ORDER[idx + 1]);
+    if (next) next.focus();
+}
+
+function attachEnterSelect(inputEl) {
+    inputEl.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            selectFirstDatalistMatch(inputEl);
+            focusNextInput(inputEl);
+        }
+    });
+}
+
 const setupInput = (id, imgId, list, key) => {
     const el = document.getElementById(id);
     const img = document.getElementById(imgId);
@@ -263,6 +297,7 @@ const setupInput = (id, imgId, list, key) => {
         updateGuideEntry(prevSlotValues[key], newName);
         prevSlotValues[key] = newName;
     });
+    attachEnterSelect(el);
 };
 
 setupInput('primary-input', 'primary-img', weapons, 'primary');
@@ -273,6 +308,7 @@ setupInput('armor-input', 'armor-img', armors, 'armor');
 for (let i = 1; i <= 4; i++) {
     const input = document.getElementById(`strat${i}-input`);
     const img = document.getElementById(`strat${i}-img`);
+    attachEnterSelect(input);
     input.addEventListener('input', () => {
         const val = input.value.trim().toLowerCase();
         if (val !== "") {
