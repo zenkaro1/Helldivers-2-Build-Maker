@@ -177,6 +177,12 @@ input[type="text"]:focus {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
+/* Untere Reihe (Stratagems): Tooltip unter dem Bild */
+.build-img-table tr:nth-child(2) td[data-tooltip]:not([data-tooltip=""]):hover::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+
 .slot-img {
   width: 120px;
   aspect-ratio: 1 / 1;
