@@ -300,7 +300,13 @@ async function runScreenshot(callback) {
     const tempDiv = document.createElement('div');
     tempDiv.id = 'guide-input-display';
     const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    tempDiv.innerHTML = escapeHtml(textContent).replace(/\n/g, '<br>');
+    // Eine Zeile = ein eigenes <div>. Robust gegen html2canvas-Eigenheiten
+    // mit <br> / white-space: pre-wrap auf GitHub Pages.
+    tempDiv.innerHTML = textContent.split('\n').map(line => {
+        const safe = escapeHtml(line);
+        // Leere Zeile muss trotzdem Höhe haben
+        return `<div style="min-height:1.5em;">${safe || '&nbsp;'}</div>`;
+    }).join('');
     tempDiv.style.cssText = `
         width: 100%;
         padding: 15px;
