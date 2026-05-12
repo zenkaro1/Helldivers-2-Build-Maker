@@ -295,12 +295,30 @@ for (let i = 1; i <= 4; i++) {
 async function runScreenshot(callback) {
     const ta = document.getElementById('guide-input');
     const area = document.getElementById('screenshot-area');
-    
-    // Temporär für Screenshot auf volle Höhe setzen
-    const originalHeight = ta.style.height;
-    const originalOverflow = ta.style.overflowY;
-    ta.style.height = ta.scrollHeight + "px";
-    ta.style.overflowY = "hidden";
+
+    const textContent = ta.value;
+    const tempDiv = document.createElement('div');
+    tempDiv.id = 'guide-input-display';
+    const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    tempDiv.innerHTML = escapeHtml(textContent).replace(/\n/g, '<br>');
+    tempDiv.style.cssText = `
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1.5px solid #ffe06644;
+        background: rgba(24, 26, 32, 0.92);
+        color: #f5f5f5;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-family: 'FS Sinclair', 'Segoe UI', Arial, sans-serif;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        text-align: left;
+    `;
+
+    const originalDisplay = ta.style.display;
+    ta.style.display = 'none';
+    ta.parentNode.insertBefore(tempDiv, ta);
 
     // Bilder laden abwarten
     const imgs = area.querySelectorAll('img');
@@ -315,8 +333,8 @@ async function runScreenshot(callback) {
             windowWidth: area.scrollWidth,
             windowHeight: area.scrollHeight
         }).then(canvas => {
-            ta.style.height = originalHeight;
-            ta.style.overflowY = originalOverflow;
+            tempDiv.remove();
+            ta.style.display = originalDisplay;
             callback(canvas);
         });
     }, 100);
